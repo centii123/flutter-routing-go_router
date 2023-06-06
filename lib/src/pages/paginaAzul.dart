@@ -6,10 +6,27 @@ class paginaAzul extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: () {
-          GoRouter.of(context).go("/paginaRoja");
-        },
-        child: Text("Roja"));
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("PAGINA AZUL")),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("entrar a la pagina Roja:"),
+            SizedBox(
+              height: 15,
+            ),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: Colors.red),
+                onPressed: () {
+                  GoRouter.of(context).go("/paginaRoja");
+                },
+                child: Text("Roja"))
+          ],
+        ),
+      ),
+    );
   }
 }

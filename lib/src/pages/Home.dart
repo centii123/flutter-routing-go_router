@@ -6,10 +6,27 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: () {
-          GoRouter.of(context).go("/paginaAzul");
-        },
-        child: Text("Azul"));
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Center(child: Text("HOME")),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("entrar a la pagina azul:"),
+            SizedBox(
+              height: 15,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context).go("/paginaAzul");
+                },
+                child: Text("Azul"))
+          ],
+        ),
+      ),
+    );
   }
 }
